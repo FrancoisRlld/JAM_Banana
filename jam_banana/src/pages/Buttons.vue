@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <h1>Buttons Page</h1>
+  </div>
 </template>
 
 <script>
