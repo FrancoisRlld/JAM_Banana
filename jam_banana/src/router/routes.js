@@ -5,7 +5,16 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') }
-    ]
+    ],
+    children: [
+      { path: '', component: () => import('pages/Success.vue') }
+    ],
+    children: [
+      { path: '', component: () => import('pages/Citations.vue') }
+    ],
+    children: [
+      { path: '', component: () => import('pages/Buttons.vue') }
+    ],
   },
 
   // Always leave this as last one,
