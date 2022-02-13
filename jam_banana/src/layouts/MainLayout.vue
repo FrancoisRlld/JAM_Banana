@@ -1,5 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+
+    <!-- La partie ci-dessous gère tout le header du site (ce qui est en haut en bleu et qui contient <EpiSuccess> -->
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -9,13 +11,62 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
+          color="red-12"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>EpiSuccess</q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div class="q-pa-md q-gutter-sm">
+          <q-btn class="text-capitalize" label="The Game" color="red-14" @click="lightDialog = true" />
+
+          <q-dialog v-model="lightDialog" persistent>
+
+            <q-card>
+              <q-bar>
+                <q-icon name="arrow_forward" />
+                <q-space />
+                <div>How to become a SuccessMaster</div>
+                <q-space />
+                <q-btn dense flat icon="close" v-close-popup>
+                  <q-tooltip>Close</q-tooltip>
+                </q-btn>
+              </q-bar>
+
+              <q-card-section>
+                The goal in this game is actually very simple. Becoming a SuccessMaster !
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                To do that, you need to do exactly what we told you. Very simple isn't it ?
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                First Step : Pray for Me, I am your new God.
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                Second Step : Go to the Success Page, a lot of successes are waiting for you.
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                Third Step : Obviously, you need to feel in all the successes.
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                Fourth Step : It's time for a new pray for Me, after all, I am your new God !
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                Fifth Step : Find the Sacred Gorilla and the Legendary Banana.
+              </q-card-section>
+
+              <q-card-section class="text-bold">
+                Congrats, you are a SuccessMaster ! Time for a sacrifice in my Name. How about your first born ?
+              </q-card-section>
+            </q-card>
+          </q-dialog>
+        </div>
+
       </q-toolbar>
     </q-header>
 
@@ -104,10 +155,31 @@ export default defineComponent({
 
   setup () {
     const leftDrawerOpen = ref(false)
+    const loading = ref([
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ])
+
+    const progress = ref(false)
+
+    function simulateProgress (number) {
+      loading.value[number] = true
+      setTimeout(() => {
+        loading.value[number] = false
+      }, 3000)
+    }
 
     return {
+      lightDialog: ref(false),
       essentialLinks: linksList,
       leftDrawerOpen,
+      loading,
+      progress,
+      simulateProgress,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
