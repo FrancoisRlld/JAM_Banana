@@ -89,7 +89,7 @@
           <!-- Ici, le fichier correspondant est SuccessLayout.vue -->
           <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="green" @click="goToSuccess">Succès</q-btn>
         </div>
-        <div align="center" style="margin-top: 100px">
+        <div align="center" style="margin-top: 100px" >
           <!-- Ici, le fichier correspondant est CitationsLayout.vue -->
           <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="orange" @click="goToCitations">Citations</q-btn>
         </div>
