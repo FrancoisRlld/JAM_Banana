@@ -1,9 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
 
-    <!-- La partie ci-dessous gère tout le header du site (ce qui est en haut en bleu et qui contient <EpiSuccess> -->
+    <!-- La partie <q-header> ci-dessous gère tout le header du site (ce qui est en haut en bleu et qui contient <EpiSuccess> -->
     <q-header elevated>
       <q-toolbar>
+        <!-- Ce bouton permet de cacher ou non le menu de gauche -->
         <q-btn
           flat
           dense
@@ -16,6 +17,7 @@
 
         <q-toolbar-title>EpiSuccess</q-toolbar-title>
 
+        <!-- Ce bouton sert d'aide au joueur, qu'il comprenne ce qu'il doit faire. J'ai délibérément tout séparé pour que vous puissiez gérer chaque partie comme vous le souhaitez -->
         <div class="q-pa-md q-gutter-sm">
           <q-btn class="text-capitalize" label="The Game" color="red-14" @click="lightDialog = true" />
 
@@ -70,90 +72,55 @@
       </q-toolbar>
     </q-header>
 
+    <!-- Ici, je m'occupe du positionnement et de l'affichage des éléments qui sont dans le menu de gauche -->
+    <!-- Je n'ai pas encore relié les boutons aux différentes pages associées -->
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       bordered
     >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+      <q-toolbar-title class="text-h6 q-mt-lg" align="center">
+        Menu
+      </q-toolbar-title>
+      <q-list style="margin-top: 150px">
+        <div align="center">
+          <!-- Ici, le truc important c'est le <@click>. il exécutera la fonction goToSuccess que j'ai mise dans la partie <script> -->
+          <!-- Le même principe sera appliqué aux autres boutons ci-dessous -->
+          <!-- Ici, le fichier correspondant est SuccessLayout.vue -->
+          <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="green" @click="goToSuccess">Succès</q-btn>
+        </div>
+        <div align="center" style="margin-top: 100px">
+          <!-- Ici, le fichier correspondant est CitationsLayout.vue -->
+          <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="orange" @click="goToCitations">Citations</q-btn>
+        </div>
+        <div align="center" style="margin-top: 100px">
+          <!-- Ici, le fichier correspondant est ButtonsLayout.vue -->
+          <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="red" @click="goToGame">Jeux</q-btn>
+        </div>
       </q-list>
     </q-drawer>
 
+    <!-- Ici, je relie le centre de la page d'accueil avec le fichier Welcome.vue, qui contient tous les éléments que j'y affiche. -->
+    <!-- Pour appeler le fichier correspondant, je dois l'importer (voir 2ème import dans le script) avant de pouvoir l'appeler par son petit nom. -->
+    <!-- Ici, le fichier correspondant est Welcome.vue -->
     <q-page-container>
-      <router-view />
+      <home />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
 
 import { defineComponent, ref } from 'vue'
+import home from '../pages/Welcome.vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
+  components: { home },
   name: 'MainLayout',
 
-  components: {
-    EssentialLink
-  },
-
   setup () {
+    const router = useRouter()
     const leftDrawerOpen = ref(false)
     const loading = ref([
       false,
@@ -175,13 +142,21 @@ export default defineComponent({
 
     return {
       lightDialog: ref(false),
-      essentialLinks: linksList,
       leftDrawerOpen,
       loading,
       progress,
       simulateProgress,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
+      },
+      goToSuccess: () => {
+        return router.push({ name: 'Success' })
+      },
+      goToCitations: () => {
+        return router.push({ name: 'Citations' })
+      },
+      goToGame: () => {
+        return router.push({ name: 'Buttons' })
       }
     }
   }

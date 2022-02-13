@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Success Page</h1>
+    Success Page
   </div>
 </template>
 
