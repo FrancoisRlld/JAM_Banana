@@ -63,17 +63,12 @@ export default defineComponent({
         'La véritable épreuve de l\'amitié, c\'est le succès : car le malheur ne réclame que du secours et ne risque que la résistance de l\'avarice ; tandis que le succès voudrait de l\'affection et ne rencontre que l\'envie.',
         'Prends garde au lendemain du succès !'
       ],
-      images: ['http://localhost:8080/img/1.e174be91.jpg',
-        'http://localhost:8080/img/2.1ebe9212.jpg',
-        'http://localhost:8080/img/3.c15eb9c8.jpg',
-        'http://localhost:8080/img/4.cc0a63d4.jpg',
-        'http://localhost:8080/img/5.5bc41d87.jpg',
-        'http://localhost:8080/img/6.c99594c1.jpg',
-        'http://localhost:8080/img/7.74872cbe.jpg',
-        'http://localhost:8080/img/8.088110e5.jpg',
-        'http://localhost:8080/img/9.3c10261f.jpg',
-        'http://localhost:8080/img/10.4d1cf8ba.jpg',
-        'http://localhost:8080/img/11.e672ba73.jpg'],
+      images: ['https://picsum.photos/200/300',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350'],
       selectedImage: ''
     }
   },
@@ -81,7 +76,7 @@ export default defineComponent({
     newQuote: function () {
       this.random = Math.floor(Math.random() * 20) + 0
       this.quote = this.quotes[this.random]
-      const idx = Math.floor(Math.random() * 11)
+      const idx = Math.floor(Math.random() * 6)
       this.selectedImage = this.images[idx]
     }
   }
