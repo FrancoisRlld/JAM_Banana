@@ -5,6 +5,9 @@
             RETURN
         </q-btn>
     </div>
+    <div align="right">
+      <q-btn flat @click="showBanana"></q-btn>
+    </div>
     <h4 style="text-align: center; text-decoration: underline;">Success</h4>
     <div align="center" class="text-body2">
         <div class="row" style="margin-top: 20px">
@@ -174,65 +177,7 @@
             </q-card>
           </div>
           <div class="col q-mr-md" v-else style>
-            <q-card class="my-card" style="height: 100px; background: rgb(8, 173, 8)">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 50px">
-          <div class="col q-mx-md" v-if="!getsuccess" style>
             <q-card class="my-card" style="height: 100px; background: grey">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col q-mx-md" v-else style>
-            <q-card class="my-card" style="height: 100px; background: rgb(8, 173, 8)">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col q-mr-md" v-if="!getsuccess" style>
-            <q-card class="my-card" style="height: 100px; background: grey">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col q-mr-md" v-else style>
-            <q-card class="my-card" style="height: 100px; background: rgb(8, 173, 8)">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col q-mr-md" v-if="!getsuccess" style>
-            <q-card class="my-card" style="height: 100px; background: grey">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col q-mr-md" v-else style>
-            <q-card class="my-card" style="height: 100px; background: rgb(8, 173, 8)">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col q-mr-md" v-if="!getsuccess" style>
-            <q-card class="my-card" style="height: 100px; background: grey">
-              <q-card-section align="center">
-                <div class="text-h6 q-mt-md">You have discovered the blue color</div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col q-mr-md" v-else style>
-            <q-card class="my-card" style="height: 100px; background: rgb(8, 173, 8)">
               <q-card-section align="center">
                 <div class="text-h6 q-mt-md">You have discovered the blue color</div>
               </q-card-section>
@@ -241,6 +186,9 @@
         </div>
       </div>
 
+  <div class="q-mt-lg q-mr-lg" style="text-align: right">
+    <q-btn push color="white" round icon="help"  @click="goToGorilla"/>
+  </div>
 </template>
 
 <script>
@@ -250,13 +198,19 @@ import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'SuccessLayout',
-
   setup () {
     const router = useRouter()
     return {
       getsuccess: true,
+      getBanana: false,
       prevPage: () => {
         return router.push({ path: '/' })
+      },
+      goToGorilla: () => {
+        return router.push({ name: 'Gorilla' })
+      },
+      showBanana: () => {
+        return router.push({ name: 'Bananas' })
       }
     }
   }

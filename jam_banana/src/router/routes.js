@@ -45,6 +45,28 @@ const routes = [
     ]
   },
   {
+    path: '/gorilla',
+    component: () => import('layouts/GorillaLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Gorilla',
+        component: () => import('pages/Gorilla.vue')
+      }
+    ]
+  },
+  {
+    path: '/bananas',
+    component: () => import('layouts/BananasLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Bananas',
+        component: () => import('pages/Bananas.vue')
+      }
+    ]
+  },
+  {
     path: '/:catchAll(.*)*',
     component: () => import('pages/Error404.vue')
   }

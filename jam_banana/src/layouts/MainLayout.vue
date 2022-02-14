@@ -43,23 +43,33 @@
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                First Step : Pray for Me, I am your new God.
+                <span class="text-red-10 text-bold">First Step </span>
+                <span>: Pray for Me, I am your new God.</span>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Second Step : Go to the Success Page, a lot of successes are waiting for you.
+                <span class="text-red-10 text-bold">Second Step </span>
+                <span>: Go to the Success Page, a lot of successes are waiting for you.</span>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Third Step : Obviously, you need to feel in all the successes.
+                <span class="text-red-10 text-bold">Third Step </span>
+                <span>: Obviously, you need to feel in all the successes.</span>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Fourth Step : It's time for a new pray for Me, after all, I am your new God !
+                <span class="text-red-10 text-bold">Fourth Step </span>
+                <span>: It's time for a new pray for Me, after all, I am your new God !</span>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Fifth Step : Find the Sacred Gorilla and the Legendary Banana.
+                <span class="text-red-10 text-bold">Fifth Step </span>
+                <span>: : Help the Sacred Gorilla to find the Legendary Banana.</span>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <span class="text-red-10 text-bold">Sixth Step </span>
+                <span>: : Send us 150 bitcoins.</span>
               </q-card-section>
 
               <q-card-section class="text-bold">
@@ -87,7 +97,7 @@
           <!-- Ici, le truc important c'est le <@click>. il exécutera la fonction goToSuccess que j'ai mise dans la partie <script> -->
           <!-- Le même principe sera appliqué aux autres boutons ci-dessous -->
           <!-- Ici, le fichier correspondant est SuccessLayout.vue -->
-          <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="green" @click="goToSuccess">Succès</q-btn>
+          <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="green" @click="goToSuccess">Success</q-btn>
         </div>
         <div align="center" style="margin-top: 100px" >
           <!-- Ici, le fichier correspondant est CitationsLayout.vue -->
@@ -95,7 +105,7 @@
         </div>
         <div align="center" style="margin-top: 100px">
           <!-- Ici, le fichier correspondant est ButtonsLayout.vue -->
-          <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="red" @click="goToGame">Jeux</q-btn>
+          <q-btn class="q-mt-lg q-mb-lg text-capitalize" color="red" @click="goToGame">Game</q-btn>
         </div>
       </q-list>
     </q-drawer>

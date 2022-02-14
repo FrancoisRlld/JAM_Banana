@@ -9,13 +9,13 @@
     <div align="center">
     <q-card class="my-card">
       <q-card-section>
-        <h3 class="text">{{quote}}</h3>
-        <img v-bind:src="selectedImage" class="img"/>
+        <h4 style="margin-top: 100px" class="text">{{quote}}</h4>
+        <img style="margin-top: 70px" v-bind:src="selectedImage" class="img"/>
       </q-card-section>
     </q-card>
 
       <q-btn color="green" v-on:click="newQuote">
-        <h3>Génerer une citation</h3>
+        <p class="q-mt-md" style="min-width: 200px">Generate a quote about success</p>
       </q-btn>
     </div>
 
@@ -41,7 +41,7 @@ export default defineComponent({
     return {
       el: '#app',
       random: 0,
-      quote: 'Pouet',
+      quote: 'La taille de la banane ne fait pas la force du gorille !',
       quotes: ['Une raison pour le succès vaut bien la raison du succès.',
         'Le succès de l\'insuccès est un succès.',
         'Le succès de l\'insuccès est un succès.',
@@ -68,6 +68,81 @@ export default defineComponent({
         'https://picsum.photos/200/200',
         'https://picsum.photos/200/250',
         'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/450',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/500',
+        'https://picsum.photos/300/600',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
+        'https://picsum.photos/200/350',
+        'https://picsum.photos/200/400',
+        'https://picsum.photos/200/200',
+        'https://picsum.photos/200/250',
+        'https://picsum.photos/200/275',
         'https://picsum.photos/200/350'],
       selectedImage: ''
     }
@@ -76,7 +151,7 @@ export default defineComponent({
     newQuote: function () {
       this.random = Math.floor(Math.random() * 20) + 0
       this.quote = this.quotes[this.random]
-      const idx = Math.floor(Math.random() * 6)
+      const idx = Math.floor(Math.random() * 81)
       this.selectedImage = this.images[idx]
     }
   }

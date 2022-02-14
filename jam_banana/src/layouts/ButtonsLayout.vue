@@ -27,62 +27,11 @@ import { useRouter } from 'vue-router'
 export default defineComponent({
   name: 'CitationsLayout',
   setup () {
-    // bt = false
-    // sd_bt = false
-    // thd_bt = false
-    // frt_bt = false
-    // fft_bt = false
-    // sxt_bt = false
-    // svn_bt = false
-    // hgt_bt = false
-    // nin_bt = false
-    // ten_bt = false
     const router = useRouter()
     return {
       prevPage: () => {
         return router.push({ path: '/' })
       }
-      // bt_clicked: () => {
-      //   bt = true
-      //   return bt
-      // },
-      // sd_bt_clicked: () => {
-      //   sd_bt = true
-      //   return sd_bt
-      // },
-      // thd_bt_clicked: () => {
-      //   thd_bt = true
-      //   return thd_bt
-      // },
-      // frt_bt_clicked: () => {
-      //   frt_bt = true
-      //   return frt_bt
-      // },
-      // fft_bt_clicked: () => {
-      //   fft_bt = true
-      //   return fft_bt
-      // },
-      // sxt_bt_clicked: () => {
-      //   sxt_bt = true
-      //   return sxt_bt
-      // },
-      // svn_bt_clicked: () => {
-      //   svn_bt = true
-      //   console.log(svn_bt)
-      //   return svn_bt
-      // },
-      // hgt_bt_clicked: () => {
-      //   hgt_bt = true
-      //   return hgt_bt
-      // },
-      // nin_bt_clicked: () => {
-      //   nin_bt = true
-      //   return nin_bt
-      // },
-      // ten_bt_clicked: () => {
-      //   ten_bt = true
-      //   return ten_bt
-      // }
     }
   }
 })
